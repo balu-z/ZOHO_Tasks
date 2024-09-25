@@ -2,18 +2,19 @@ package runner;
 
 import java.io.*;
 import task.Task3;
+import exception.CustomException;
 import java.util.*;
 
 public class RunnerTask3 
 {
   static  BufferedReader reader =new BufferedReader(new InputStreamReader(System.in));
-        
-     static   Scanner in =new Scanner(System.in);
-   public static void main (String [] args) throws Exception  
+  static   Scanner in =new Scanner(System.in);
+   public static void main (String [] args) throws IOException  
    {
         String input="";
         char ch=' ';
         int num=0;
+       String input1="";
       
         
 
@@ -29,8 +30,8 @@ public class RunnerTask3
         System.out.println("6. to find last  characters of a string");
         System.out.println("7. to find first  characters of a string");
         System.out.println("8. to replace a string with new string");
-        System.out.println("9. to check whether a string starts with 'ent' or not");
-        System.out.println("10. to check whether a string ends with 'le' or not");
+        System.out.println("9. to check whether a string starts with another string or not");
+        System.out.println("10. to check whether a string ends with another string or not");
         System.out.println("11. to convert all letters in a string to lowercase");
         System.out.println("12. to convert all letters in a string to uppercase");
         System.out.println("13. to reverse a string");
@@ -47,11 +48,12 @@ public class RunnerTask3
         { 
            System.out.println("Enter a choice between 1- 21: ");
            int choice =in.nextInt();
-
+      try{ 
            switch(choice )
             {
+
                   case 1 :
-                                    input=  stringSinInp();
+                                         input=  stringSinInp();
                                        System.out.println("length of a string  "+ex1.length(input));
                                         break;   
                   case 2:
@@ -65,7 +67,7 @@ public class RunnerTask3
                    case 4:
                                       input=  stringSinInp();
                                        ch=charInp();
-                                      System.out.println("Character occured "+ex1.charOccurence(input,ch)+" times");
+                                      System.out.println("'"+ch+"' Character occured "+ex1.charOccurence(input,ch)+" times");
                                        break; 
                    case 5:
                                       input= stringSinInp();
@@ -73,29 +75,37 @@ public class RunnerTask3
                                       System.out.println("Greatest position of a character  "+ex1.greatestPosition(input,ch));
                                        break;   
                    case 6:
+                            
                                       input =stringSinInp();
                                        num= numInp(); 
                                        System.out.println("Last "+num+" character of a string "+ex1.lastCharacters(input,num));
-                                       break;   
+                                       break; 
+
+                     
                    case 7:
                                       input =stringSinInp();
                                        num= numInp();
                                       System.out.println("First "+ num +" character of a string "+ex1.firstChar(input,num));
                                        break;  
                     case 8:
+                                
                                       input =stringSinInp();
-                                      String input1 =stringSinInp();
+                                       System.out.println("Enter a another string ");
+                                       input1 =reader.readLine();
                                        num= numInp();
                                        System.out.println("replaced string "+ex1.replaceFirstChar(input,num,input1));
-                                       break;    
+                                       break;                                    
+                                      
                    case 9:
                                       input =stringSinInp();
-                                       input1 =stringSinInp();
+                                       System.out.println("Enter a another string ");
+                                       input1 =reader.readLine();
                                        System.out.println("Is string starts with '"+input1+"' -  "+ex1.startsWith(input,input1));
                                        break; 
                    case 10:
                                       input =stringSinInp();
-                                       input1 =stringSinInp();
+                                       System.out.println("Enter a another string ");
+                                       input1 =reader.readLine();
                                        System.out.println("Is string ends with '"+input1+"' -  "+ex1.endsWith(input,input1));
                                        break; 
                    case 11:
@@ -117,9 +127,7 @@ public class RunnerTask3
                    case 15:
                                       input =stringMultiInp();
                                       String[] arr=input.split("\\s*");
-                                       System.out.println("Line with Multiple String and concatenated into  Single string without space ");
-                                       ex1.lineWithMultipleStringsAndConcatenate(arr);
-                                      System.out.println();
+                                       System.out.println("Line with Multiple String and concatenated into  Single string without space "+ex1.lineWithMultipleStringsAndConcatenate(arr));
                                        break; 
                    case 16:
                                       input =stringMultiInp();
@@ -128,31 +136,31 @@ public class RunnerTask3
                    case 17:
                                       System.out.print("Enter a number of inputs :");
                                       int numOfInput=in.nextInt();
+                                       System.out.println("Enter a symbol to merge string ");
+                                       input1 =reader.readLine();
                                       String[] arr3=new String[numOfInput];
                                       for(int i=0;i<numOfInput;i++){
-                                              input =stringMultiInp();
+                                             System.out.println("Enter a String"+(i+1));
+                                              input =reader.readLine();
                                               arr3[i]=input; 
                                       }
-                                        System.out.println("merged Multiple String with symbols  "+mergedString(arr3));                                       
+                                        System.out.println("merged Multiple String with symbols  "+ex1.mergedString(input1,arr3));                                       
                                        break; 
                    case 18:
-                                      System.out.print("Enter a String 1 : ");
-                                       input =reader.readLine();
-                                      System.out.print("Enter a String 2 : ");
-                                     input1 =reader.readLine();
+                                      input =stringMultiInp();
+                                       System.out.println("Enter a another string ");
+                                       input1 =reader.readLine();
                                        System.out.println(" Is two string are equal (case senstive) -  "+ex1.equals(input,input1));
                                        break; 
                    case 19:
-                                      System.out.print("Enter a String 1 : ");
-                                       input =reader.readLine();
-                                      System.out.print("Enter a String 2 : ");
+                                      input =stringMultiInp();
+                                       System.out.println("Enter a another string ");
                                        input1 =reader.readLine();
                                        System.out.println(" Is two string are equal (case in senstive) -  "+ex1.equals(input,input1));
                                        break; 
                    case 20:
-                                      System.out.print("Enter a String : ");
-                                       input =reader.readLine();
-                                       System.out.println("Space removed  (start and end or both) string  "+ex1.removeSpace(input));
+                                      input =stringMultiInp();
+                                       System.out.println("Space removed  (start and end or both) string ="+ex1.removeSpace(input));
                                        break; 
                    case 21:       
                                      flag=false;
@@ -160,11 +168,17 @@ public class RunnerTask3
                     default : 
                                      System.out.println(" Wrong choice please choose a mentioned one ");
                                       break;
-                                        
-                      }
-              }
+                               }   
+                          }
+                         catch(CustomException e)
+                                         {
+                                               System.out.println(e.getMessage());
+                                                break;
+                                          }
+                       } 
+                       
+                 }    
 
-         }
     public static String  stringSinInp()  
     {   
          System.out.println("Enter a String");
@@ -173,7 +187,7 @@ public class RunnerTask3
      }
     public static String  stringMultiInp()  throws IOException
     {
-        System.out.println("Enter a Multiple String");
+        System.out.println("Enter a Line with Multiple String");
          String  input=reader.readLine();
            return input;
      }
@@ -192,4 +206,3 @@ public class RunnerTask3
 
 }
 
-      
