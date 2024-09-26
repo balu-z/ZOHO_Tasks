@@ -8,7 +8,8 @@ import java.util.*;
 public class RunnerTask3 
 {
   static  BufferedReader reader =new BufferedReader(new InputStreamReader(System.in));
-  static   Scanner in =new Scanner(System.in);
+        
+     static   Scanner in =new Scanner(System.in);
    public static void main (String [] args) throws IOException  
    {
         String input="";
@@ -24,9 +25,9 @@ public class RunnerTask3
 
         System.out.println("1. to check length");
         System.out.println("2. to convert character array");
-        System.out.println("3. to find penUltimate character");
+        System.out.println("3. to find char in specified index");
         System.out.println("4. to find number of occurence of a character");
-        System.out.println("5. to find greatest position of a character");
+        System.out.println("5. to find greatest position of a characters");
         System.out.println("6. to find last  characters of a string");
         System.out.println("7. to find first  characters of a string");
         System.out.println("8. to replace a string with new string");
@@ -61,8 +62,10 @@ public class RunnerTask3
                                        System.out.println("Character array of a String " +Arrays.toString(ex1.toCharArray(input)));
                                        break;   
                   case 3:
-                                      input=  stringSinInp();
-                                       System.out.println("Pen Ultimate character is "+ex1.penUltimateChar(input));
+                                      input=  stringSinInp(); 
+                                      System.out.println("Enter a index Position :");
+                                       num=in.nextInt();
+                                       System.out.println("The '"+num+"'th character of the string '"+ex1.charAt(input,num)+"'");
                                        break;    
                    case 4:
                                       input=  stringSinInp();
@@ -71,8 +74,9 @@ public class RunnerTask3
                                        break; 
                    case 5:
                                       input= stringSinInp();
-                                      ch= charInp();
-                                      System.out.println("Greatest position of a character  "+ex1.greatestPosition(input,ch));
+                                       System.out.println("Enter a another string ");
+                                       input1 =reader.readLine();
+                                      System.out.println("Greatest position of a characters  "+ex1.greatestPosition(input,input1));
                                        break;   
                    case 6:
                             
@@ -206,3 +210,4 @@ public class RunnerTask3
 
 }
 
+      
