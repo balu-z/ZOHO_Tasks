@@ -17,7 +17,7 @@ public  char[] toCharArray(String test) throws CustomException
 
 public  char charAt(String test,int check) throws CustomException
 {
-     
+     checkNull(test);
       return test.charAt(check);
 }
 
@@ -45,7 +45,7 @@ public  int charOccurence(String test,char c) throws CustomException
 
         int n=length(test);
         if(noOfChar <=n){
-          return test.substring(test.length()-noOfChar);
+          return test.substring(n-noOfChar);
          }
         else{
            throw new CustomException("Please check the input");
@@ -67,8 +67,8 @@ public  int charOccurence(String test,char c) throws CustomException
 
   public String replaceFirstChar(String test,int noOfChar,String rep) throws CustomException
   {
-
-         if(noOfChar==length(rep)&&length(test)>=length(rep)){
+         int len=length(rep);
+         if(noOfChar==len&&length(test)>=len){
              String replace =test.substring(0,noOfChar);
            return test.replaceFirst(replace,rep);
          }
@@ -129,10 +129,10 @@ public String stringReverse(String test) throws CustomException
           return test;
   }
 
-  public String lineWithMultipleStringsAndConcatenate(String[] test) 
+  public String lineWithMultipleStringsAndConcatenate(String test) 
   {
  
-       return String.join("", test);
+       return test.replace(" ","");
   }
 
    public String[] split(String test) throws CustomException
@@ -167,7 +167,7 @@ public String stringReverse(String test) throws CustomException
    }
       public void checkNull(String test) throws CustomException
     {
-         if(test.trim().isEmpty()&&test.equals(null)){
+         if(test==null&&test.trim().isEmpty()){
                    throw new CustomException("Entered String is null or empty");
          }
   
