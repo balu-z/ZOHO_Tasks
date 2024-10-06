@@ -130,8 +130,7 @@ public class RunnerTask3
                                        break; 
                    case 15:
                                       input =stringMultiInp();
-                                      String[] arr=input.split("\\s*");
-                                       System.out.println("Line with Multiple String and concatenated into  Single string without space "+ex1.lineWithMultipleStringsAndConcatenate(arr));
+                                       System.out.println("Line with Multiple String and concatenated into  Single string without space - "+ex1.lineWithMultipleStringsAndConcatenate(input));
                                        break; 
                    case 16:
                                       input =stringMultiInp();
@@ -209,5 +208,4 @@ public class RunnerTask3
      }
 
 }
-
       
