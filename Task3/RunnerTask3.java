@@ -54,7 +54,7 @@ public class RunnerTask3
             {
 
                   case 1 :
-                                         input=  stringSinInp();
+                                      input=null;
                                        System.out.println("length of a string  "+ex1.length(input));
                                         break;   
                   case 2:
@@ -130,11 +130,15 @@ public class RunnerTask3
                                        break; 
                    case 15:
                                       input =stringMultiInp();
-                                       System.out.println("Line with Multiple String and concatenated into  Single string without space - "+ex1.lineWithMultipleStringsAndConcatenate(input));
+                                       System.out.println("Enter a symbol to concatenate a string ");
+                                       input1 =reader.readLine();                                    
+                                       System.out.println("Line with Multiple String and concatenated into  Single string without space - "+ex1.lineWithMultipleStringsAndConcatenate(input,input1));
                                        break; 
                    case 16:
                                       input =stringMultiInp();
-                                       System.out.println("Line with Multiple String converted to String array   "+Arrays.toString(ex1.split(input)));
+                                       System.out.println("Enter a symbol to split a string ");
+                                       input1 =reader.readLine();
+                                       System.out.println("Line with Multiple String converted to String array   "+Arrays.toString(ex1.split(input,input1)));
                                        break; 
                    case 17:
                                       System.out.print("Enter a number of inputs :");
@@ -208,4 +212,3 @@ public class RunnerTask3
      }
 
 }
-      
