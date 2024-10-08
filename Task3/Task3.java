@@ -43,20 +43,20 @@ public  int charOccurence(String test,char c) throws CustomException
   public String lastCharacters(String test,int noOfChar) throws CustomException
   {   
         int n=length(test);
-        exceptionCheck(noOfChar,n);
+        boundaryCheck(noOfChar,n);
          return test.substring(n-noOfChar);      
   }
 
  public String firstChar(String test,int noOfChar ) throws CustomException
   { 
-            exceptionCheck(noOfChar,length(test));
+            boundaryCheck(noOfChar,length(test));
            return test.substring(0,noOfChar); 
   }
 
   public String replaceFirstChar(String test,int noOfChar,String rep) throws CustomException
   {
          int len=length(rep);
-        exceptionCheck(len,length(test));
+        boundaryCheck(len,length(test));
          if(noOfChar!=len){
                throw new CustomException("Please check the input");
          }
@@ -163,7 +163,7 @@ public String stringReverse(String test) throws CustomException
    }
   public void exceptionCheck(int noOfChar,int len) throws CustomException
    {     
-       if(noOfChar>len)
+       if(noOfChar>len||len<=0||noOfChar<=0)
        {
             throw new CustomException("Please check the input");
        }        
