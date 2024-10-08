@@ -1,5 +1,4 @@
 package task;
-import java.util.*;
 import exception.CustomException;
 public class Task3
 {
@@ -23,14 +22,15 @@ public  char charAt(String test,int check) throws CustomException
 
 public  int charOccurence(String test,char c) throws CustomException
 {
-
      int count=0;
      int n=length(test);
-      for(int i=0;i<n;i++)
-      {
+     for(int i=0;i<n;i++)
+     {
              if(test.charAt(i)==c)
+             {
                    count++;
-      }
+              }
+     }
       return count;
  }
 
@@ -42,40 +42,27 @@ public  int charOccurence(String test,char c) throws CustomException
 
   public String lastCharacters(String test,int noOfChar) throws CustomException
   {   
-
         int n=length(test);
-        if(noOfChar <=n){
-          return test.substring(n-noOfChar);
-         }
-        else{
-           throw new CustomException("Please check the input");
-         }
-         
-}
+        exceptionCheck(noOfChar,n);
+         return test.substring(n-noOfChar);      
+  }
 
  public String firstChar(String test,int noOfChar ) throws CustomException
   { 
-
-     if(noOfChar<=length(test)){
-           return test.substring(0,noOfChar);
-     }
-    else{
-            throw new CustomException("Please check the input");
-     }
-   
- }
+            exceptionCheck(noOfChar,length(test));
+           return test.substring(0,noOfChar); 
+  }
 
   public String replaceFirstChar(String test,int noOfChar,String rep) throws CustomException
   {
          int len=length(rep);
-         if(noOfChar==len&&length(test)>=len){
-             String replace =test.substring(0,noOfChar);
-           return test.replaceFirst(replace,rep);
-         }
-        else{
+        exceptionCheck(len,length(test));
+         if(noOfChar!=len){
                throw new CustomException("Please check the input");
          }
-           
+
+           String replace =test.substring(0,noOfChar);
+           return test.replaceFirst(replace,rep);
    
   }
 
@@ -126,19 +113,21 @@ public String stringReverse(String test) throws CustomException
   public String lineWithMultipleStrings(String test) throws CustomException
   {
             checkNull(test);
-          return test;
+           return test;
   }
 
-  public String lineWithMultipleStringsAndConcatenate(String test) 
+  public String lineWithMultipleStringsAndConcatenate(String test,String sym) throws CustomException
   {
- 
-       return test.replace(" ","");
+             checkNull(test);
+             checkNull(sym);
+         return test.replace(" ",sym);
   }
 
-   public String[] split(String test) throws CustomException
+   public String[] split(String test,String where) throws CustomException
    {
              checkNull(test);
-      return test.split(" ");
+             checkNull(where);
+            return test.split(where);
    }
 
   public String mergedString(String sym,String []test) throws CustomException
@@ -150,7 +139,7 @@ public String stringReverse(String test) throws CustomException
   {
             checkNull(test);
             checkNull(s);
-     return test.equals(s);
+           return test.equals(s);
   }
 
   public boolean equalsIgnoreCase(String test,String s) throws CustomException
@@ -167,10 +156,18 @@ public String stringReverse(String test) throws CustomException
    }
       public void checkNull(String test) throws CustomException
     {
-         if(test==null&&test.trim().isEmpty()){
-                   throw new CustomException("Entered String is null or empty");
+         if(test==null){
+              throw new CustomException("Entered String is null ");
          }
   
    }
-     
+  public void exceptionCheck(int noOfChar,int len) throws CustomException
+   {     
+       if(noOfChar>len)
+       {
+            throw new CustomException("Please check the input");
+       }        
+    }
+
+ 
 }
