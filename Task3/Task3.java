@@ -161,7 +161,7 @@ public String stringReverse(String test) throws CustomException
          }
   
    }
-  public void exceptionCheck(int noOfChar,int len) throws CustomException
+  public void boundaryCheck(int noOfChar,int len) throws CustomException
    {     
        if(noOfChar>len||len<=0||noOfChar<=0)
        {
