@@ -13,24 +13,23 @@ public  char[] toCharArray(String test) throws CustomException
        checkNull(test);
       return test.toCharArray();
 }
-
 public  char charAt(String test,int check) throws CustomException
 {
      checkNull(test);
+     boundaryCheck(check);
       return test.charAt(check);
 }
-
 public  int charOccurence(String test,char c) throws CustomException
 {
      int count=0;
      int n=length(test);
-     for(int i=0;i<n;i++)
-     {
+      for(int i=0;i<n;i++)
+      {
              if(test.charAt(i)==c)
              {
                    count++;
               }
-     }
+      }
       return count;
  }
 
@@ -44,15 +43,14 @@ public  int charOccurence(String test,char c) throws CustomException
   {   
         int n=length(test);
         boundaryCheck(noOfChar,n);
-         return test.substring(n-noOfChar);      
-  }
+         return test.substring(n-noOfChar);       
+}
 
  public String firstChar(String test,int noOfChar ) throws CustomException
   { 
             boundaryCheck(noOfChar,length(test));
-           return test.substring(0,noOfChar); 
-  }
-
+           return test.substring(0,noOfChar);  
+ }
   public String replaceFirstChar(String test,int noOfChar,String rep) throws CustomException
   {
          int len=length(rep);
@@ -63,9 +61,7 @@ public  int charOccurence(String test,char c) throws CustomException
 
            String replace =test.substring(0,noOfChar);
            return test.replaceFirst(replace,rep);
-   
   }
-
  public boolean startsWith(String test,String check)  throws CustomException
   {
             checkNull(test);
@@ -102,32 +98,31 @@ public String stringReverse(String test) throws CustomException
             char temp =ar[j];
             ar[j]=ar[i];
             ar[i]=temp;
-           i--;
-           j++;
-       }
-    
-     
+             i--;
+             j++;
+       }     
       return String.valueOf(ar);
   }
    
   public String lineWithMultipleStrings(String test) throws CustomException
   {
-            checkNull(test);
-           return test;
+           checkNull(test);
+          return test;
   }
 
-  public String lineWithMultipleStringsAndConcatenate(String test,String sym) throws CustomException
+  public String lineWithMultipleStringsAndConcatenate(String test,String what,String sym) throws CustomException
   {
              checkNull(test);
              checkNull(sym);
-         return test.replace(" ",sym);
+             checkNull(what);
+       return test.replace(what,sym);
   }
 
    public String[] split(String test,String where) throws CustomException
    {
              checkNull(test);
              checkNull(where);
-            return test.split(where);
+              return test.split(where);
    }
 
   public String mergedString(String sym,String []test) throws CustomException
@@ -139,7 +134,7 @@ public String stringReverse(String test) throws CustomException
   {
             checkNull(test);
             checkNull(s);
-           return test.equals(s);
+          return test.equals(s);
   }
 
   public boolean equalsIgnoreCase(String test,String s) throws CustomException
@@ -147,8 +142,7 @@ public String stringReverse(String test) throws CustomException
             checkNull(test);
             checkNull(s);
      return test.equalsIgnoreCase(s);
-  }
-  
+  }  
   public String removeSpace(String test) throws CustomException
   {
             checkNull(test);
@@ -156,18 +150,23 @@ public String stringReverse(String test) throws CustomException
    }
       public void checkNull(String test) throws CustomException
     {
-         if(test==null){
-              throw new CustomException("Entered String is null ");
+         if(test==null)
+         {
+                   throw new CustomException("Entered String is null or empty");
          }
-  
    }
-  public void boundaryCheck(int noOfChar,int len) throws CustomException
-   {     
-       if(noOfChar>len||len<=0||noOfChar<=0)
+   public void boundaryCheck(int num) throws CustomException
+   {  
+       if(num<0)
        {
             throw new CustomException("Please check the input");
        }        
     }
-
- 
+  public void boundaryCheck(int noOfChar,int len) throws CustomException
+   {        
+       if(noOfChar>len||noOfChar<=0|| len<=0)
+       {
+            throw new CustomException("Please check the input");
+       }        
+    }     
 }
