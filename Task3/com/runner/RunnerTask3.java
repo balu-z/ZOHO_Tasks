@@ -53,7 +53,7 @@ public class RunnerTask3
 
                   case 1 :
                                       input=null;
-                                       System.out.println("length of a string  "+ex1.getLength(input));
+                                       System.out.println("length of a string  "+Utility.getLength(input));
                                         break;   
                   case 2:
                                       input=  stringSinInp();
