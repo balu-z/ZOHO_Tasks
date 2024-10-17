@@ -3,6 +3,11 @@ import com.exception.InputNullException;
    
 public class Utility
 {
+    public static  int  getLength(String input) throws InputNullException
+    { 
+     checkNull(input);
+      return input.length();
+     }
      public static void checkNull(String input) throws InputNullException
     {
          if(input==null)
