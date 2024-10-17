@@ -3,13 +3,7 @@ import com.exception.InputNullException;
 import com.util.Utility;
 
 public class Task3
-{  
- public  int  getLength(String input) throws InputNullException
- { 
-      Utility.checkNull(input);
-      return input.length();
-  }
-
+{
 public  char[] toCharArray(String input) throws InputNullException
 {
        Utility.checkNull(input);
@@ -24,7 +18,7 @@ public  char charAtSpecifiedIndex(String input,int index) throws InputNullExcept
 public  int charOccurence(String input,char ch) throws InputNullException
 {
      int count=0;
-     int n=getLength(input);
+     int n=Utility.getLength(input);
       for(int i=0;i<n;i++)
       {
              if(input.charAt(i)==ch)
@@ -43,14 +37,14 @@ public  int charOccurence(String input,char ch) throws InputNullException
 
   public String lastCharacters(String input,int noOfChar) throws InputNullException
   {   
-        int n=getLength(input);
+        int n=Utility.getLength(input);
        Utility.boundaryCheck(noOfChar,n);
          return input.substring(n-noOfChar);       
 }
 
  public String firstChar(String input,int noOfChar ) throws InputNullException
   { 
-            Utility.boundaryCheck(noOfChar,getLength(input));
+            Utility.boundaryCheck(noOfChar,Utility.getLength(input));
            return input.substring(0,noOfChar);  
  }
   public String replaceFirstChar(String input,int noOfChar,String repl) throws InputNullException
@@ -133,7 +127,7 @@ public String stringReverse(String input) throws InputNullException
 }
   public boolean isEquals(String input1,String input2) throws InputNullException
   {
-           Utility. checkNull(input1);
+           Utility.checkNull(input1);
             Utility.checkNull(input2);
           return input1.equals(input2);
   }
@@ -148,5 +142,6 @@ public String stringReverse(String input) throws InputNullException
   {
            Utility.checkNull(input);
              return input.trim();
-   }  
+   }
+     
 }
