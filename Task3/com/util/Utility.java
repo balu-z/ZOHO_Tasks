@@ -1,34 +1,34 @@
 package com.util;
-import com.exception.InvalidException;
+import com.exception.InputNullException;
    
 public class Utility
 {
-     public void checkNull(String input) throws InvalidException
+     public static void checkNull(String input) throws InputNullException
     {
          if(input==null)
          {
-                   throw new InvalidException("Entered String is null or empty");
+                   throw new InputNullException("Entered String is null or empty");
          }
    }
-   public void boundaryCheck(int num) throws InvalidException
+   public static void boundaryCheck(int num) throws InputNullException
    {  
        if(num<0)
        {
-            throw new InvalidException("Please check the input");
+            throw new InputNullException("Please check the input");
        }        
     }
-  public void boundaryCheck(int noOfChar,int len) throws InvalidException
+  public  static void boundaryCheck(int noOfChar,int len) throws InputNullException
    {        
        if(noOfChar>len||noOfChar<=0|| len<=0)
        {
-            throw new InvalidException("Please check the input");
+            throw new InputNullException("Please check the input");
        }        
     }     
-  public void checkNull(String []arr) throws InvalidException
+  public static void checkNull(String []arr) throws InputNullException
   {
      if(arr.length==0)
       {
-              throw new InvalidException("Need a string array");
+              throw new InputNullException("Need a string array");
       }
   }
 
