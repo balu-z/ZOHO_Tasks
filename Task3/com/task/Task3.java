@@ -1,28 +1,27 @@
 package com.task;
-import com.exception.InvalidException;
+import com.exception.InputNullException;
 import com.util.Utility;
 
 public class Task3
-{
-   Utility use=new Utility();
- public  int  getLength(String input) throws InvalidException
+{  
+ public  int  getLength(String input) throws InputNullException
  { 
-      use.checkNull(input);
+      Utility.checkNull(input);
       return input.length();
   }
 
-public  char[] toCharArray(String input) throws InvalidException
+public  char[] toCharArray(String input) throws InputNullException
 {
-       use.checkNull(input);
+       Utility.checkNull(input);
       return input.toCharArray();
 }
-public  char charAt(String input,int index) throws InvalidException
+public  char charAtSpecifiedIndex(String input,int index) throws InputNullException
 {
-     use.checkNull(input);
-     use.boundaryCheck(index);
+     Utility.checkNull(input);
+     Utility.boundaryCheck(index);
       return input.charAt(index);
 }
-public  int charOccurence(String input,char ch) throws InvalidException
+public  int charOccurence(String input,char ch) throws InputNullException
 {
      int count=0;
      int n=getLength(input);
@@ -36,119 +35,118 @@ public  int charOccurence(String input,char ch) throws InvalidException
       return count;
  }
 
-  public int greatestPosition(String input1,String input2) throws InvalidException
+  public int greatestPosition(String input1,String input2) throws InputNullException
   {
-         use.checkNull(input1);
+         Utility.checkNull(input1);
       return input1.lastIndexOf(input2);
    }
 
-  public String lastCharacters(String input,int noOfChar) throws InvalidException
+  public String lastCharacters(String input,int noOfChar) throws InputNullException
   {   
         int n=getLength(input);
-       use.boundaryCheck(noOfChar,n);
+       Utility.boundaryCheck(noOfChar,n);
          return input.substring(n-noOfChar);       
 }
 
- public String firstChar(String input,int noOfChar ) throws InvalidException
+ public String firstChar(String input,int noOfChar ) throws InputNullException
   { 
-            use.boundaryCheck(noOfChar,getLength(input));
+            Utility.boundaryCheck(noOfChar,getLength(input));
            return input.substring(0,noOfChar);  
  }
-  public String replaceFirstChar(String input,int noOfChar,String repl) throws InvalidException
+  public String replaceFirstChar(String input,int noOfChar,String repl) throws InputNullException
   {
-           use.checkNull(input);
-           use.checkNull(repl);
-           use.boundaryCheck(noOfChar);
+           Utility.checkNull(input);
+           Utility.checkNull(repl);
+           Utility.boundaryCheck(noOfChar);
            String replace =input.substring(0,noOfChar);
            return input.replaceFirst(replace,repl);
   }
- public boolean isStartsWith(String input1,String input2)  throws InvalidException
+ public boolean isStartsWith(String input1,String input2)  throws InputNullException
   {
-            use.checkNull(input1);
-            use.checkNull(input2);
+            Utility.checkNull(input1);
+            Utility.checkNull(input2);
       return input1.startsWith(input2);
   }
 
-public boolean isEndsWith(String input1,String input2)  throws InvalidException
+public boolean isEndsWith(String input1,String input2)  throws InputNullException
   {
-            use.checkNull(input1);
-            use.checkNull(input2);
+            Utility.checkNull(input1);
+            Utility.checkNull(input2);
       return input1.endsWith(input2);
   }
 
-public String toUppercase(String input) throws InvalidException
+public String toUppercase(String input) throws InputNullException
   {
-            use.checkNull(input);
+            Utility.checkNull(input);
       return input.toUpperCase();
   }
 
-public String toLowercase(String input) throws InvalidException
+public String toLowercase(String input) throws InputNullException
   {
-            use.checkNull(input);
+            Utility.checkNull(input);
       return input.toLowerCase();
   }
 
-public String stringReverse(String input) throws InvalidException
+public String stringReverse(String input) throws InputNullException
   {
-      use.checkNull(input);
+      Utility.checkNull(input);
      char[]arr=input.toCharArray(); 
-      int i=arr.length-1,j=0;
+      int i =arr.length-1,j=0;
       while(i>j)
        {
-           arr[i]=(char)((arr[i]+arr[j])-(arr[j]=arr[i]));    
+             arr[i]=(char)((arr[i]+arr[j])-(arr[j]=arr[i]));
              i--;
              j++;
-       }     
+       }
       return String.valueOf(arr);
   }
    
-  public String lineWithMultipleStrings(String input) throws InvalidException
+  public String lineWithMultipleStrings(String input) throws InputNullException
   {
-           use.checkNull(input);
+           Utility.checkNull(input);
           return input;
   }
 
-  public String lineWithMultipleStringsAndConcatenate(String input,String replaceWhat,String replaceWord) throws InvalidException
+  public String lineWithMultipleStringsAndConcatenate(String input,String replaceWhat,String replaceWord) throws InputNullException
   {
-             use.checkNull(input);
-            use. checkNull(replaceWord);
-             use.checkNull(replaceWhat);
+             Utility.checkNull(input);
+            Utility. checkNull(replaceWord);
+             Utility.checkNull(replaceWhat);
        return input.replace(replaceWhat,replaceWord);
   }
 
-   public String[] toSplit(String input,String whereToSplit) throws InvalidException
+   public String[] toSplit(String input,String whereToSplit) throws InputNullException
    {
-             use.checkNull(input);
-             use.checkNull(whereToSplit);
+             Utility.checkNull(input);
+             Utility.checkNull(whereToSplit);
               return input.split(whereToSplit);
    }
 
-  public String toMergeString(String input,String []str) throws InvalidException
+  public String toMergeString(String input,String []str) throws InputNullException
   { 
-            use.checkNull(input); 
+            Utility.checkNull(input); 
             if(str.length==0)
               {
                       return "String needed";
               }
            return String.join(input,str);
 }
-  public boolean isEquals(String input1,String input2) throws InvalidException
+  public boolean isEquals(String input1,String input2) throws InputNullException
   {
-           use. checkNull(input1);
-            use.checkNull(input2);
+           Utility. checkNull(input1);
+            Utility.checkNull(input2);
           return input1.equals(input2);
   }
 
-  public boolean isEqualsIgnoreCase(String input1,String input2) throws InvalidException
+  public boolean isEqualsIgnoreCase(String input1,String input2) throws InputNullException
   {
-            use.checkNull(input1);
-            use.checkNull(input2);
+            Utility.checkNull(input1);
+            Utility.checkNull(input2);
      return input1.equalsIgnoreCase(input2);
   }  
-  public String toRemoveSpace(String input) throws InvalidException
+  public String toRemoveSpace(String input) throws InputNullException
   {
-           use.checkNull(input);
+           Utility.checkNull(input);
              return input.trim();
-   }
-     
+   }  
 }
