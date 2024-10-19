@@ -182,10 +182,6 @@ public class RunnerTask3
                                    e.printStackTrace();
                                    break;
                           }
-                         catch(Exception e){
-                                  e.printStackTrace();
-                                  break;
-                       } 
                   }
         }
 
