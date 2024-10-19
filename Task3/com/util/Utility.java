@@ -4,40 +4,42 @@ import com.exception.InputNullException;
 public class Utility
 {
     public static  int  getLength(String input) throws InputNullException
-    { 
-     checkNull(input);
-      return input.length();
+   { 
+      try{
+            checkNull(input);
+            return input.length();
+         }
+      catch(NullPointerException e)
+      {
+            throw new InputNullException("Error occured in  input :",e);
+       }
      }
-     public static void checkNull(String input) throws InputNullException
+     public static void checkNull(String input) throws NullPointerException
     {
          if(input==null)
          {
-                   throw new InputNullException("Entered String is null or empty");
+                   throw new NullPointerException("Entered String is null ");
          }
    }
-   public static void boundaryCheck(int num) throws InputNullException
+   public static void boundaryCheck(int num) throws Exception
    {  
        if(num<0)
        {
-            throw new InputNullException("Please check the input");
+            throw new Exception("Please check the input");
        }        
     }
-  public  static void boundaryCheck(int noOfChar,int len) throws InputNullException
+  public  static void boundaryCheck(int noOfChar,int len) throws Exception
    {        
        if(noOfChar>len||noOfChar<=0|| len<=0)
        {
-            throw new InputNullException("Please check the input");
+            throw new Exception("Please check the input");
        }        
     }     
-  public static void checkNull(String []arr) throws InputNullException
+  public static void checkNull(String []arr) throws NullPointerException
   {
      if(arr.length==0)
       {
-              throw new InputNullException("Need a string array");
+              throw new NullPointerException("Need a string array");
       }
   }
-
-
 }
-
-
