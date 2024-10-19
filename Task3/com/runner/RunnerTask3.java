@@ -4,6 +4,7 @@ import java.io.*;
 import com.task.Task3;
 import com.exception.InputNullException;
 import java.util.*;
+import com.util.Utility;
 
 public class RunnerTask3 
 {
@@ -52,9 +53,9 @@ public class RunnerTask3
             {
 
                   case 1 :
-                                      input=null;
+                                        input=null;
                                        System.out.println("length of a string  "+Utility.getLength(input));
-                                        break;   
+                                        break;
                   case 2:
                                       input=  stringSinInp();
                                        System.out.println("Character array of a String " +Arrays.toString(ex1.toCharArray(input)));
@@ -177,14 +178,16 @@ public class RunnerTask3
                                       break;
                                }   
                           }
-                         catch(InputNullException e)
-                                         {
-                                               System.out.println(e.getMessage());
-                                                break;
-                                          }
+                         catch(InputNullException e){
+                                   e.printStackTrace();
+                                   break;
+                          }
+                         catch(Exception e){
+                                  e.printStackTrace();
+                                  break;
                        } 
-                       
-                 }    
+                  }
+        }
 
     public static String  stringSinInp()  
     {   
@@ -214,5 +217,4 @@ public class RunnerTask3
           char ch=scan.in.next().charAt(0);
            return ch;
      }
-
 }
