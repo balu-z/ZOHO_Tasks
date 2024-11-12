@@ -1,20 +1,21 @@
 package com.task;
 import com.util.Utility;
+import com.exception.InputNullException;
 
-public class Task3
+public class StringMethods
 {
-    public  char[] toCharArray(String input)
+    public  char[] toCharArray(String input) throws InputNullException
     {
                    Utility.checkNull(input);
                    return input.toCharArray();
     }
-    public  char charAtSpecifiedIndex(String input,int index) throws Exception
+    public  char charAtSpecifiedIndex(String input,int index) throws InputNullException
     {
             Utility.checkNull(input);
             Utility.boundaryCheck(index);
             return input.charAt(index);
     }
-    public  int charOccurence(String input,char ch) throws Exception
+    public  int charOccurence(String input,char ch) throws InputNullException
     {
                 int count=0;
                 int n=Utility.getLength(input);
@@ -28,7 +29,7 @@ public class Task3
                  return count;
      }
 
-      public int greatestPosition(String input1,String input2)
+      public int greatestPosition(String input1,String input2) throws InputNullException
       {
 
                Utility.checkNull(input1);
@@ -36,18 +37,18 @@ public class Task3
 
        }
 
-     public String lastCharacters(String input,int noOfChar) throws Exception
+     public String lastCharacters(String input,int noOfChar) throws InputNullException
      {
              int n=Utility.getLength(input);
              Utility.boundaryCheck(noOfChar,n);
              return input.substring(n-noOfChar);
       }
-     public String firstChar(String input,int noOfChar ) throws Exception
+     public String firstChar(String input,int noOfChar ) throws InputNullException
       {
                 Utility.boundaryCheck(noOfChar,Utility.getLength(input));
                 return input.substring(0,noOfChar);
      }
-      public String replaceChar(String input,int noOfChar,String repl,int index) throws Exception
+      public String replaceChar(String input,int noOfChar,String repl,int index) throws InputNullException
       {
                Utility.checkNull(input);
                Utility.checkNull(repl);
@@ -56,33 +57,33 @@ public class Task3
                String replace =input.substring(index,index+noOfChar);
                return input.replaceFirst(replace,repl);
       }
-     public boolean isStartsWith(String input1,String input2)
+     public boolean isStartsWith(String input1,String input2) throws InputNullException
       {
                 Utility.checkNull(input1);
                 Utility.checkNull(input2);
                 return input1.startsWith(input2);
       }
 
-    public boolean isEndsWith(String input1,String input2)
+    public boolean isEndsWith(String input1,String input2) throws InputNullException
       {
                 Utility.checkNull(input1);
                 Utility.checkNull(input2);
                 return input1.endsWith(input2);
       }
 
-    public String toUppercase(String input)
+    public String toUppercase(String input) throws InputNullException
       {
                 Utility.checkNull(input);
                 return input.toUpperCase();
       }
 
-    public String toLowercase(String input)
+    public String toLowercase(String input) throws InputNullException
       {
                 Utility.checkNull(input);
                 return input.toLowerCase();
       }
 
-    public String stringReverse(String input)
+    public String stringReverse(String input) throws InputNullException
       {
                  Utility.checkNull(input);
                 char[]arr=input.toCharArray();
@@ -96,13 +97,13 @@ public class Task3
                  return String.valueOf(arr);
       }
 
-      public String lineWithMultipleStrings(String input)
+      public String lineWithMultipleStrings(String input) throws InputNullException
       {
                Utility.checkNull(input);
                return input;
       }
 
-      public String lineWithMultipleStringsAndConcatenate(String input,String replaceWhat,String replaceWord)
+      public String lineWithMultipleStringsAndConcatenate(String input,String replaceWhat,String replaceWord) throws InputNullException
       {
                  Utility.checkNull(input);
                  Utility. checkNull(replaceWord);
@@ -110,35 +111,36 @@ public class Task3
                  return input.replace(replaceWhat,replaceWord);
       }
 
-       public String[] toSplit(String input,String whereToSplit)
+       public String[] toSplit(String input,String whereToSplit) throws InputNullException
        {
                  Utility.checkNull(input);
                  Utility.checkNull(whereToSplit);
                  return input.split(whereToSplit);
        }
 
-      public String toMergeString(String input,String []str) 
+      public String toMergeString(String input,String []str)  throws InputNullException
       {
                        Utility.checkNull(input);
                        Utility.checkNull(str);
                        return String.join(input,str);
     }
-      public boolean isEquals(String input1,String input2)
+      public boolean isEquals(String input1,String input2) throws InputNullException
       {
                 Utility. checkNull(input1);
                 Utility.checkNull(input2);
                 return input1.equals(input2);
       }
 
-      public boolean isEqualsIgnoreCase(String input1,String input2)
+      public boolean isEqualsIgnoreCase(String input1,String input2) throws InputNullException
       {
                 Utility.checkNull(input1);
                 Utility.checkNull(input2);
                 return input1.equalsIgnoreCase(input2);
       }
-      public String toRemoveSpace(String input)
+      public String toRemoveSpace(String input) throws InputNullException
       {
                Utility.checkNull(input);
                  return input.trim();
     }
 }
+
