@@ -1,7 +1,7 @@
 package com.runner;
 
 import java.io.*;
-import com.task.Task3;
+import com.task.StringMethods;
 import com.exception.InputNullException;
 import java.util.*;
 import com.util.Utility;
@@ -9,7 +9,7 @@ import com.util.Utility;
 public class RunnerTask3
 {
           BufferedReader reader =new BufferedReader(new InputStreamReader(System.in));
-          Task3 ex1 =new Task3();
+          StringMethods ex1 =new StringMethods();
           Scanner in =new Scanner(System.in);
           String input="";
           char ch=' ';
