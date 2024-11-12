@@ -12,7 +12,7 @@ public class StringMethods
     public  char charAtSpecifiedIndex(String input,int index) throws InputNullException
     {
             Utility.checkNull(input);
-            Utility.boundaryCheck(input.length(),index);
+            Utility.boundaryCheck(index,input.length());
             return input.charAt(index);
     }
     public  int charOccurence(String input,char ch) throws InputNullException
@@ -31,10 +31,8 @@ public class StringMethods
 
       public int greatestPosition(String input1,String input2) throws InputNullException
       {
-
                Utility.checkNull(input1);
                return input1.lastIndexOf(input2);
-
        }
 
      public String lastCharacters(String input,int noOfChar) throws InputNullException
@@ -147,5 +145,3 @@ public class StringMethods
                  return input.trim();
     }
 }
-
-

@@ -1,14 +1,5 @@
-package com.runner;
-
-import java.io.*;
-import com.task.StringMethods;
-import com.exception.InputNullException;
-import java.util.*;
-import com.util.Utility;
-
 public class RunnerTask3
 {
-          BufferedReader reader =new BufferedReader(new InputStreamReader(System.in));
           StringMethods ex1 =new StringMethods();
           Scanner in =new Scanner(System.in);
           String input="";
@@ -20,8 +11,6 @@ public class RunnerTask3
     {
        RunnerTask3 scan =new RunnerTask3();
        scan.getInput();
-       in.close();
-        reader.close();      
     }
     public  String  stringSinInp()
     {
@@ -32,8 +21,9 @@ public class RunnerTask3
     public  String  stringMultiInp()  throws IOException
     {
         System.out.println("Enter a Line with Multiple String");
-         String  input=reader.readLine();
-           return input;
+		in.nextLine();
+         String  input=in.nextLine();
+          return input;
     }
     public  int  numInp()
     {
@@ -91,7 +81,7 @@ public class RunnerTask3
                                           endingChar();
                                            break;
                        case 11:
-                                            convLower();
+                                           convLower();
                                            break;
                        case 12:
                                            convUpper();
@@ -167,7 +157,7 @@ public class RunnerTask3
      {
          try{
              System.out.print("Enter a String:");
-             input =null;
+             input =in.next();
              System.out.println("length of a string  "+Utility.getLength(input));
          }
          catch(Exception e)
@@ -202,8 +192,9 @@ public class RunnerTask3
      {
          try{
                     input= stringSinInp();
+					in.nextLine();
                     System.out.println("Enter a  another string to find greatest position");
-                    input1 =reader.readLine();
+                    input1 =in.nextLine();
                     System.out.println("Greatest position of a characters  "+ex1.greatestPosition(input,input1));
          }
          catch(Exception e)
@@ -236,8 +227,9 @@ public class RunnerTask3
      {
          try{
                         input =stringSinInp();
+						in.nextLine();
                         System.out.println("Enter a another string ");
-                        input1 =reader.readLine();
+                        input1 =in.nextLine();
                         System.out.println("Enter a specified index to replace ");
                         input2 =in.nextInt();
                         System.out.println("replaced string "+ex1.replaceChar(input,input1,input2));
@@ -250,8 +242,9 @@ public class RunnerTask3
      {
          try{
                     input =stringSinInp();
+					in.nextLine();
                     System.out.println("Enter a another string ");
-                    input1 =reader.readLine();
+                    input1 =in.nextLine();
                     System.out.println("Is string starts with '"+input1+"' -  "+ex1.isStartsWith(input,input1));
          }
          catch(Exception e)
@@ -262,8 +255,9 @@ public class RunnerTask3
      {
          try{
                     input =stringSinInp();
+					in.nextLine();
                     System.out.println("Enter a another string ");
-                    input1 =reader.readLine();
+                    input1 =in.nextLine();
                     System.out.println("Is string ends with '"+input1+"' -  "+ex1.isEndsWith(input,input1));
          }
          catch(Exception e)
@@ -284,7 +278,7 @@ public class RunnerTask3
      {
          try{
                     input =stringSinInp();
-                    System.out.println("String in a lowercase  "+ex1.toUppercase(input));
+                    System.out.println("String in a Uppercase  "+ex1.toUppercase(input));
          }
          catch(Exception e)
          {
@@ -294,6 +288,7 @@ public class RunnerTask3
      {
          try{
                    input =stringSinInp();
+				   in.nextLine();
                    System.out.println("Reversed String  "+ex1.stringReverse(input));
          }
          catch(Exception e)
@@ -315,9 +310,9 @@ public class RunnerTask3
          try{
                     input =stringMultiInp();
                     System.out.println("Enter a where to concatenate a string ");
-                    input1 =reader.readLine();
+                    input1 =in.nextLine();
                     System.out.println("Enter a replacedString to concatenate  ");
-                    String input2 =reader.readLine();
+                    String input2 =in.nextLine();
                     System.out.println("Line with Multiple String and concatenated into  Single string without space - "+ex1.lineWithMultipleStringsAndConcatenate(input,input1,input2));
          }
          catch(Exception e)
@@ -329,7 +324,7 @@ public class RunnerTask3
          try{
                     input =stringMultiInp();
                     System.out.println("Enter a symbol to split a string ");
-                    input1 =reader.readLine();
+                    input1 =in.nextLine();
                     System.out.println("Line with Multiple String converted to String array   "+Arrays.toString(ex1.toSplit(input,input1)));
          }
          catch(Exception e)
@@ -341,12 +336,13 @@ public class RunnerTask3
          try{
                 System.out.print("Enter a number of inputs :");
                 int numOfInput=in.nextInt();
+				in.nextLine();
                 System.out.println("Enter a symbol to merge string ");
-                input1 =reader.readLine();
+                input1 =in.nextLine();
                 String[] arr3=new String[numOfInput];
                 for(int i=0;i<numOfInput;i++){
                      System.out.println("Enter a String"+(i+1));
-                     input =reader.readLine();
+                     input =in.nextLine();
                      arr3[i]=input;
                 }
                 System.out.println("merged Multiple String with symbols  "+ex1.toMergeString(input1,arr3));
@@ -360,8 +356,9 @@ public class RunnerTask3
      {
          try{
                     input =stringSinInp();
+					in.nextLine();
                     System.out.println("Enter a another string ");
-                    input1 =reader.readLine();
+                    input1 =in.nextLine();
                     System.out.println(" Is two string are equal (case senstive) -  "+ex1.isEquals(input,input1));
          }
          catch(Exception e)
@@ -372,8 +369,9 @@ public class RunnerTask3
      {
          try{
                    input =stringSinInp();
+				   in.nextLine();
                    System.out.println("Enter a another string ");
-                    input1 =reader.readLine();
+                   input1 =in.nextLine();
                     System.out.println(" Is two string are equal (case in senstive) -  "+ex1.isEquals(input,input1));
          }
          catch(Exception e)
@@ -383,10 +381,10 @@ public class RunnerTask3
      }public void charFound()throws InputNullException
      {
          try{
-                    input=  stringSinInp();
+                    input= stringSinInp();
                     System.out.println("Enter a index Position :");
-                     num=in.nextInt();
-                     System.out.println("The '"+num+"'th character of the string '"+ex1.charAtSpecifiedIndex(input,num)+"'");
+                    num=in.nextInt();
+                    System.out.println("The '"+num+"'th character of the string '"+ex1.charAtSpecifiedIndex(input,num)+"'");
          }
          catch(Exception e)
          {
@@ -396,8 +394,8 @@ public class RunnerTask3
      public void remSpace()throws InputNullException
      {
          try{
-                    input=  stringMultiInp();
-                     System.out.println("Space removed String "+ex1.toRemoveSpace(input));
+                    input=stringMultiInp();
+                    System.out.println("Space removed String "+ex1.toRemoveSpace(input));
          }
          catch(Exception e)
          {
