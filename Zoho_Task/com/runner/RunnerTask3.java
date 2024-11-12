@@ -20,6 +20,8 @@ public class RunnerTask3
     {
        RunnerTask3 scan =new RunnerTask3();
        scan.getInput();
+       in.close();
+        reader.close();      
     }
     public  String  stringSinInp()
     {
