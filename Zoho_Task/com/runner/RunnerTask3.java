@@ -236,10 +236,9 @@ public class RunnerTask3
                         input =stringSinInp();
                         System.out.println("Enter a another string ");
                         input1 =reader.readLine();
-                        num= numInp();
                         System.out.println("Enter a specified index to replace ");
                         input2 =in.nextInt();
-                        System.out.println("replaced string "+ex1.replaceChar(input,num,input1,input2));
+                        System.out.println("replaced string "+ex1.replaceChar(input,input1,input2));
          }
          catch(Exception e)
          {
