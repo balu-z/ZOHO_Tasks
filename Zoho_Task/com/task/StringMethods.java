@@ -12,7 +12,7 @@ public class StringMethods
     public  char charAtSpecifiedIndex(String input,int index) throws InputNullException
     {
             Utility.checkNull(input);
-            Utility.boundaryCheck(index);
+            Utility.boundaryCheck(input.length(),index);
             return input.charAt(index);
     }
     public  int charOccurence(String input,char ch) throws InputNullException
@@ -48,13 +48,17 @@ public class StringMethods
                 Utility.boundaryCheck(noOfChar,Utility.getLength(input));
                 return input.substring(0,noOfChar);
      }
-      public String replaceChar(String input,int noOfChar,String repl,int index) throws InputNullException
+      public String replaceChar(String input,String repl,int index) throws InputNullException
       {
+		       String replace="";
                Utility.checkNull(input);
                Utility.checkNull(repl);
-               Utility.boundaryCheck(noOfChar);
-               Utility.boundaryCheck(index);
-               String replace =input.substring(index,index+noOfChar);
+               Utility.boundaryCheck(index,input.length());
+			   if(index+repl.length()<input.length()){
+                   replace =input.substring(index,index+repl.length());
+			   }else{
+				   replace =input.substring(index,input.length());
+			   }
                return input.replaceFirst(replace,repl);
       }
      public boolean isStartsWith(String input1,String input2) throws InputNullException
@@ -143,4 +147,5 @@ public class StringMethods
                  return input.trim();
     }
 }
+
 
