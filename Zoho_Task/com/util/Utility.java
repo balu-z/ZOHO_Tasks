@@ -3,33 +3,33 @@ import com.exception.InputNullException;
 
 public class Utility
 {
-    public static  int  getLength(String input)
+    public static  int  getLength(String input) throws InputNullException
     {
             checkNull(input);
             return input.length();
     }
-    public static void checkNull(String input)
+    public static void checkNull(String input) throws InputNullException
     {
          if(input==null)
          {
                    throw new InputNullException("Entered String is null ");
          }
     }
-   public static void boundaryCheck(int num) throws Exception
+   public static void boundaryCheck(int num) throws InputNullException
    {
        if(num<0)
        {
             throw new InputNullException("Please check the Integer input");
        }
     }
-  public  static void boundaryCheck(int noOfChar,int len) throws Exception
+  public  static void boundaryCheck(int noOfChar,int len) throws InputNullException
    {
        if(noOfChar>len||noOfChar<=0|| len<=0)
        {
             throw new InputNullException("Please check the input");
        }
     }
-  public static void checkNull(String []arr)
+  public static void checkNull(String []arr) throws InputNullException
   {
      if(arr.length==0)
       {
@@ -37,3 +37,4 @@ public class Utility
       }
   }
 }
+
