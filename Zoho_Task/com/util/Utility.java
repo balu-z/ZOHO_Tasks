@@ -15,13 +15,6 @@ public class Utility
                    throw new InputNullException("Entered String is null ");
          }
     }
-   public static void boundaryCheck(int num) throws InputNullException
-   {
-       if(num<0)
-       {
-            throw new InputNullException("Please check the Integer input");
-       }
-    }
   public  static void boundaryCheck(int noOfChar,int len) throws InputNullException
    {
        if(noOfChar>len||noOfChar<=0|| len<=0)
