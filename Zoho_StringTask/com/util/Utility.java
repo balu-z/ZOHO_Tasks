@@ -15,6 +15,13 @@ public class Utility
                    throw new InputNullException("Entered String is null ");
          }
     }
+	public  static void boundaryCheck(int num) throws InputNullException
+   {
+       if(num<0)
+       {
+            throw new InputNullException("Please check the input");
+       }
+    }
   public  static void boundaryCheck(int noOfChar,int len) throws InputNullException
    {
        if(noOfChar>len||noOfChar<=0|| len<=0)
@@ -29,5 +36,13 @@ public class Utility
               throw new InputNullException("Need a string array");
       }
   }
+  public static int getLength(StringBuilder input)
+   {
+      return input.length();
+   }
+   public static StringBuilder getBuilder(StringBuilder input)
+   {
+	   return input;
+   }
 }
 
