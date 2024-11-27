@@ -1,7 +1,7 @@
-package com.runner;
-import com.util.Utility;
-import com.task.StringTask;
-import com.exception.InputNullException;
+package com.zoho.string.runner;
+import com.zoho.util.Utility;
+import com.zoho.string.task.StringTask;
+import com.zoho.exception.CustomTaskException;
 import java.util.Scanner;
 import java.io.IOException;
 import java.util.Arrays;
@@ -134,7 +134,7 @@ public class RunnerTask3
                                           break;
                                    }
                               }
-                             catch(InputNullException e){
+                             catch(CustomTaskException e){
                                        e.printStackTrace();
                                        break;
                               }
@@ -171,7 +171,7 @@ public class RunnerTask3
 		output("21. to replace a string with new string at middle");
         output("22.Exit");
      }
-     public void getLen()throws InputNullException
+     public void getLen()throws CustomTaskException
      {
          try{
              input =inp("Enter a String:");
@@ -179,10 +179,10 @@ public class RunnerTask3
          }
          catch(Exception e)
          {
-             throw new InputNullException("Error Occured in input",e);
+             throw new CustomTaskException("Error Occured in input",e);
          }
      }
-     public void stringInCharArray()throws InputNullException
+     public void stringInCharArray()throws CustomTaskException
      {
          try{
              input =null;
@@ -190,10 +190,10 @@ public class RunnerTask3
          }
          catch(Exception e)
          {
-             throw new InputNullException("Error Occured in input",e);
+             throw new CustomTaskException("Error Occured in input",e);
          }
      }
-      public void charOccur()throws InputNullException
+      public void charOccur()throws CustomTaskException
      {
          try{
                     input=inp("Enter a String:");
@@ -202,9 +202,9 @@ public class RunnerTask3
          }
          catch(Exception e)
          {
-             throw new InputNullException("Error Occured in input",e);
+             throw new CustomTaskException("Error Occured in input",e);
          }
-     }public void greatestPosition()throws InputNullException
+     }public void greatestPosition()throws CustomTaskException
      {
          try{
                     input= inp("Enter a String:");
@@ -213,9 +213,9 @@ public class RunnerTask3
          }
          catch(Exception e)
          {
-             throw new InputNullException("Error Occured in input",e);
+             throw new CustomTaskException("Error Occured in input",e);
          }
-     }public void lastCharacter()throws InputNullException
+     }public void lastCharacter()throws CustomTaskException
      {
          try{
                     input =inp("Enter a String:");;
@@ -224,9 +224,9 @@ public class RunnerTask3
          }
          catch(Exception e)
          {
-             throw new InputNullException("Error Occured in input",e);
+             throw new CustomTaskException("Error Occured in input",e);
          }
-     }public void firstChar() throws InputNullException
+     }public void firstChar() throws CustomTaskException
      {
          try{
                     input =inp("Enter a String:");;
@@ -235,23 +235,23 @@ public class RunnerTask3
          }
          catch(Exception e)
          {
-             throw new InputNullException("Error Occured in input",e);
+             throw new CustomTaskException("Error Occured in input",e);
          }
-     }public void replaceCharacters()throws  InputNullException
+     }public void replaceCharacters()throws  CustomTaskException
      {
          try{
                         input =inp("Enter a String:");
                         input1 =inp("Enter a another String:");
-                        String input3 =inp("Enter a where to replace , start or end ");
+                        int input3 =numInp("Enter a where to replace , start(1) or end(0) ");
                         num=numInp("Enter a num of Characters ");
                         output("replaced string "+ex1.replaceChar(input,input1,num,input3));
          }
          catch(Exception e)
          {
-             throw new InputNullException("Error Occured in input",e);
+             throw new CustomTaskException("Error Occured in input",e);
          }
 	 }
-		 public void replaceMiddleChar() throws InputNullException
+		 public void replaceMiddleChar() throws CustomTaskException
      {
          try{
                         input =inp("Enter a String:");
@@ -262,9 +262,9 @@ public class RunnerTask3
          }
          catch(Exception e)
          {
-             throw new InputNullException("Error Occured in input",e);
+             throw new CustomTaskException("Error Occured in input",e);
          }
-     }public void startingChar() throws InputNullException
+     }public void startingChar() throws CustomTaskException
      {
          try{
                     input =inp("Enter a String:");
@@ -273,9 +273,9 @@ public class RunnerTask3
          }
          catch(Exception e)
          {
-             throw new InputNullException("Error Occured in input",e);
+             throw new CustomTaskException("Error Occured in input",e);
          }
-     }public void endingChar() throws InputNullException
+     }public void endingChar() throws CustomTaskException
      {
          try{
                     input =inp("Enter a String:");
@@ -284,9 +284,9 @@ public class RunnerTask3
          }
          catch(Exception e)
          {
-             throw new InputNullException("Error Occured in input",e);
+             throw new CustomTaskException("Error Occured in input",e);
          }
-     }public void convLower() throws InputNullException
+     }public void convLower() throws CustomTaskException
      {
          try{
                     input =inp("Enter a String:");
@@ -294,9 +294,9 @@ public class RunnerTask3
          }
          catch(Exception e)
          {
-             throw new InputNullException("Error Occured in input",e);
+             throw new CustomTaskException("Error Occured in input",e);
          }
-     }public void convUpper() throws InputNullException
+     }public void convUpper() throws CustomTaskException
      {
          try{
                     input =inp("Enter a String:");
@@ -304,9 +304,9 @@ public class RunnerTask3
          }
          catch(Exception e)
          {
-             throw new InputNullException("Error Occured in input",e);
+             throw new CustomTaskException("Error Occured in input",e);
          }
-     }public void reverseString() throws InputNullException
+     }public void reverseString() throws CustomTaskException
      {
          try{
                    input =inp("Enter a String:");
@@ -314,9 +314,9 @@ public class RunnerTask3
          }
          catch(Exception e)
          {
-             throw new InputNullException("Error Occured in input",e);
+             throw new CustomTaskException("Error Occured in input",e);
          }
-     }public void multipleStrings() throws InputNullException
+     }public void multipleStrings() throws CustomTaskException
      {
          try{
                     input =lineInp("Enter a String:");
@@ -324,9 +324,9 @@ public class RunnerTask3
          }
          catch(Exception e)
          {
-             throw new InputNullException("Error Occured in input",e);
+             throw new CustomTaskException("Error Occured in input",e);
          }
-     }public void concat() throws InputNullException
+     }public void concat() throws CustomTaskException
      {
          try{
                     input =lineInp("Enter a String:");
@@ -336,9 +336,9 @@ public class RunnerTask3
          }
          catch(Exception e)
          {
-             throw new InputNullException("Error Occured in input",e);
+             throw new CustomTaskException("Error Occured in input",e);
          }
-     }public void stringArray() throws InputNullException
+     }public void stringArray() throws CustomTaskException
      {
          try{
                     input =lineInp("Enter a String:");
@@ -347,9 +347,9 @@ public class RunnerTask3
          }
          catch(Exception e)
          {
-             throw new InputNullException("Error Occured in input",e);
+             throw new CustomTaskException("Error Occured in input",e);
          }
-     }public void mergeString() throws InputNullException
+     }public void mergeString() throws CustomTaskException
      {
          try{
                 int numOfInput=numInp("Enter a number of inputs");
@@ -363,10 +363,10 @@ public class RunnerTask3
          }
          catch(Exception e)
          {
-             throw new InputNullException("Error Occured in input",e);
+             throw new CustomTaskException("Error Occured in input",e);
          }
      }
-     public void equalSen() throws InputNullException
+     public void equalSen() throws CustomTaskException
      {
          try{
                     input =inp("Enter a String");
@@ -375,9 +375,9 @@ public class RunnerTask3
          }
          catch(Exception e)
          {
-             throw new InputNullException("Error Occured in input",e);
+             throw new CustomTaskException("Error Occured in input",e);
          }
-     }public void equalInSen() throws InputNullException
+     }public void equalInSen() throws CustomTaskException
      {
          try{
                    input =inp("Enter a string ");
@@ -386,9 +386,9 @@ public class RunnerTask3
          }
          catch(Exception e)
          {
-             throw new InputNullException("Error Occured in input",e);
+             throw new CustomTaskException("Error Occured in input",e);
          }
-     }public void charFound() throws InputNullException
+     }public void charFound() throws CustomTaskException
      {
          try{
                     input= inp("Enter a string ");
@@ -397,10 +397,10 @@ public class RunnerTask3
          }
          catch(Exception e)
          {
-             throw new InputNullException("Error Occured in input",e);
+             throw new CustomTaskException("Error Occured in input",e);
          }
      }
-     public void remSpace() throws InputNullException
+     public void remSpace() throws CustomTaskException
      {
          try{
                     input=lineInp("Enter a string :");
@@ -408,7 +408,7 @@ public class RunnerTask3
          }
          catch(Exception e)
          {
-             throw new InputNullException("Error Occured in input",e);
+             throw new CustomTaskException("Error Occured in input",e);
          }
      }
 
